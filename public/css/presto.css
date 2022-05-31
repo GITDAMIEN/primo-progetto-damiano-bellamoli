@@ -659,6 +659,51 @@ textarea{
 }
 
 
+/* Countdown offer*/
+
+#countdownRow{
+    width: 70%;
+    background-color: var(--sec-color);
+    border-radius: 60px;
+    padding: 20px;
+    border-style: double var(--sec-color);
+    box-shadow: 0 0 0 3px white, 0 0 0 6px var(--sec-color);
+}
+
+@keyframes flashingDots{
+    0% {
+        color: var(--custom-black);
+    }
+
+    70% {
+        color: var(--custom-black);
+    }
+
+    100% {
+        color: var(--sec-color);
+    }
+}
+
+#countdownRow > span{
+    width: 5px;
+    padding: 8px 0px;
+    font-weight: 600;
+    font-size: 28px;
+    animation-name: flashingDots;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.countdownElements{
+    font-weight: 600;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--custom-black);
+}
+
+.countdownNumbers{
+    font-size: 40px;
+}
+
 /* Newsletter */
 
 #newsletterH5{

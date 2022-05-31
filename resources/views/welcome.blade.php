@@ -294,6 +294,33 @@
         </div>
     </section>
 
+    <!-- Countdown offer -->
+    <aside class="container-fluid my-5">
+        <div class="container d-flex justify-content-center">
+            <div id="countdownRow" class="row justify-content-center">
+                <div class="col-2 text-center countdownElements">
+                    <div class="countdownNumbers">20</div>
+                    <div>days</div>
+                </div>
+                <span class="text-center">:</span>
+                <div class="col-2 text-center countdownElements">
+                    <div class="countdownNumbers">10</div>
+                    <div>hours</div>
+                </div>
+                <span class="text-center">:</span>
+                <div class="col-2 text-center countdownElements">
+                    <div class="countdownNumbers">15</div>
+                    <div>minutes</div>
+                </div>
+                <span class="text-center">:</span>
+                <div class="col-2 text-center countdownElements">
+                    <div class="countdownNumbers">30</div>
+                    <div>seconds</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
     <!-- Newsletter -->
     <section class="container-fluid">
         <hr id="newsletterHr" class="w-100 secColor my-0">
