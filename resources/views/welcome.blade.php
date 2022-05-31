@@ -257,7 +257,6 @@
 
     <!-- Work with us -->
 
-    <!-- PERCHE' NON FUNZIONA LA VALIDATION ????????????????????????????????????????????????????????????????????????????????????????????????? -->
     <section id="workWithUsContainerFluid" class="container-fluid d-flex justify-content-center px-0">
         <div class="container my-5 mx-md-0 px-md-0">
             <div id="contactUsRow" class="row mx-4 mx-md-0">
@@ -294,27 +293,29 @@
         </div>
     </section>
 
-    <!-- Countdown offer -->
+    <!-- Weekly offers countdown -->
+
+    <!-- To be made responsive -->
     <aside class="container-fluid my-5">
         <div class="container d-flex justify-content-center">
             <div id="countdownRow" class="row justify-content-center">
                 <div class="col-2 text-center countdownElements">
-                    <div class="countdownNumbers">20</div>
+                    <div id="countdownDays" class="countdownNumbers">02</div>
                     <div>days</div>
                 </div>
                 <span class="text-center">:</span>
                 <div class="col-2 text-center countdownElements">
-                    <div class="countdownNumbers">10</div>
+                    <div id="countdownHours" class="countdownNumbers">03</div>
                     <div>hours</div>
                 </div>
                 <span class="text-center">:</span>
                 <div class="col-2 text-center countdownElements">
-                    <div class="countdownNumbers">15</div>
+                    <div id="countdownMinutes" class="countdownNumbers">20</div>
                     <div>minutes</div>
                 </div>
                 <span class="text-center">:</span>
                 <div class="col-2 text-center countdownElements">
-                    <div class="countdownNumbers">30</div>
+                    <div id="countdownSeconds" class="countdownNumbers">20</div>
                     <div>seconds</div>
                 </div>
             </div>

@@ -538,8 +538,6 @@ a.nav-link:hover{
 
 /* Work with us */
 
-/* Aggiungere validations di Bootstrap agli input del form */
-
 textarea{
     min-height: 100px!important;
 }
@@ -659,7 +657,7 @@ textarea{
 }
 
 
-/* Countdown offer*/
+/* Weekly offers countdown*/
 
 #countdownRow{
     width: 70%;
@@ -703,6 +701,7 @@ textarea{
 .countdownNumbers{
     font-size: 40px;
 }
+
 
 /* Newsletter */
 

@@ -5,7 +5,7 @@
 // 3- change PostYouAdBanner IntersectionObserver ? + add a nice effect
 // 4- fix rotation to icons in list items (footer)
 // 5- merge the searchbars if possible
-// 6- add an offer countdown
+// 6- set the weekly offers countdown to a certain date
 
 //Query selectors
 const arrowNavbar = document.querySelector('#arrowNavbar')
@@ -20,6 +20,10 @@ const easterEggToastMessage = document.querySelector('#easterEggToastMessage')
 const newAdsWrapper = document.querySelector('#newAdsWrapper')
 const newAdsRow = document.querySelector('#newAdsRow')
 const postYourAdBanner = document.querySelector('#postYourAdBanner')
+const countdownDays = document.querySelector('#countdownDays')
+const countdownHours = document.querySelector('#countdownHours')
+const countdownMinutes = document.querySelector('#countdownMinutes')
+const countdownSeconds = document.querySelector('#countdownSeconds')
 const footerCategoriesListItems = document.querySelectorAll('#footerCategoriesListItem')
 const footerCategoriesListIcons = document.querySelectorAll('#footerCategoriesListIcon')
 const footerInfoListItems = document.querySelectorAll('#footerInfoListItem')
@@ -100,18 +104,15 @@ const swiper = new Swiper('.swiper', {
     slidesPerView: 1,
     spaceBetween: 0,
     
-    // If we need pagination
     pagination: {
         el: '.swiper-pagination',
     },
     
-    // Navigation arrows
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
 
-    //breakpoints
     breakpoints: {
         700: {
             slidesPerView: 2,
@@ -127,10 +128,6 @@ const swiper = new Swiper('.swiper', {
         },
     }
     
-    // And if we need scrollbar
-    // scrollbar: {
-        //     el: '.swiper-scrollbar',
-        // },
 });
 
 //Event listeners
@@ -213,6 +210,91 @@ function displayToastMessage(message){
     easterEggToastMessage.appendChild(toast);
 }
 
+//setIntervals
+let days = 1;
+let hours = 2;
+let minutes = 19;
+let seconds = 19;
+
+let daysInterval = setInterval(function(){
+    
+    if(days>=0){
+        if(days<10){
+            countdownDays.innerHTML='0'+days;
+        }else{
+            countdownDays.innerHTML=days;
+        }
+        days--;
+    }else{
+        countdownDays.innerHTML='00';
+        clearInterval(daysInterval);
+    }
+
+}, 86400000);
+
+let hoursInterval = setInterval(function(){
+    
+    if(hours>=0){
+        if(hours<10){
+            countdownHours.innerHTML='0'+hours;
+        }else{
+            countdownHours.innerHTML=hours;
+        }
+
+        if(hours>0){
+            hours--;
+        }else if(days>0){
+            hours=23;
+        }
+    }else if(days>0){
+        hours=23;
+    }else
+        clearInterval(hoursInterval);
+
+}, 3600000);
+
+let minutesInterval = setInterval(function(){
+    
+    if(minutes>=0){
+        if(minutes<10){
+            countdownMinutes.innerHTML='0'+minutes;
+        }else{
+            countdownMinutes.innerHTML=minutes;
+        }
+
+        if(minutes>0){
+            minutes--;
+        }else if(hours>0||days>0){
+            minutes=59;
+        }
+    }else if(hours>0||days>0){
+        minutes=59;
+    }else
+        clearInterval(minutesInterval);
+
+}, 60000);
+
+let secondsInterval = setInterval(function(){
+    
+    if(seconds>=0){
+        if(seconds<10){
+            countdownSeconds.innerHTML='0'+seconds;
+        }else{
+            countdownSeconds.innerHTML=seconds;
+        }
+        
+        if(seconds>0){
+            seconds--;
+        }else if(minutes>0||hours>0||days>0){
+            seconds=59;
+        }
+    }else if(minutes>0||hours>0||days>0){
+        seconds=59;
+    }else
+        clearInterval(secondsInterval);
+
+}, 1000);
+
 //Easter Egg
 
 categoriesText.addEventListener('click', ()=>{
@@ -226,7 +308,7 @@ categoriesText.addEventListener('click', ()=>{
         displayToastMessage('Hey! You just found an easter egg! :)')
         easterEggToastMessage.classList.add('fade','show')
     }
-})
+});
 
 //Bootstrap validation
 // Example starter JavaScript for disabling form submissions if there are invalid fields
