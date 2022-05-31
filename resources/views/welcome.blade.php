@@ -36,7 +36,7 @@
     <header id="headerContainerFluid" class="fixed-top container-fluid back-main">
         <div id="headerRow" class="row align-items-center">
             <div class="col-6 col-md-3">
-                <a id="logoText" class="py-0 navbar-brand ms-4 customBlack ubuntuFont" href="/"><span id="pSpan" class="secColor">P</span>resto<span id="dotSpan" class="secColor ubuntuFont">.</span>it</a>
+                <a id="logoText" class="py-0 navbar-brand ms-4 customBlack ubuntuFont" href="{{route('welcome')}}"><span id="pSpan" class="secColor">P</span>resto<span id="dotSpan" class="secColor ubuntuFont">.</span>it</a>
             </div>
             <div class="d-none d-md-flex col-md-6">
                 <form class="d-flex w-100">
@@ -92,10 +92,10 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{{route('welcome')}}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/ads">All Ads</a>
+                        <a class="nav-link" href="{{route('allAds')}}">All Ads</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Categories</a>
@@ -327,7 +327,7 @@
             <div class="row py-4">
                 <div class="col-6 col-md-4">
                     <div class="row ps-3">
-                        <a id="footerLogoText" class="py-0 mt-3 customBlack ubuntuFont" href="/"><span id="footerPSpan" class="secColor">P</span>resto<span id="footerDotSpan" class="secColor ubuntuFont">.</span>it</a>
+                        <a id="footerLogoText" class="py-0 mt-3 customBlack ubuntuFont" href="{{route('welcome')}}"><span id="footerPSpan" class="secColor">P</span>resto<span id="footerDotSpan" class="secColor ubuntuFont">.</span>it</a>
                     </div>
                     <div id="mottoPDiv" class="row">
                         <p class="ubuntuFont customBlack fw-bold ps-3">The best place to sell and search</p>
@@ -361,7 +361,7 @@
                     <ul id="footerCategoriesList" class="secColor ubuntuFont">
                         <h6 id="footerCategoriesTitle" class="fw-bold fs-5 pt-4 pb-2">CATEGORIES</h6>
                         <li id="footerCategoriesListItem" class="d-flex align-items-center py-1">
-                            <a id="footerCategoriesListAnchor" href="/ads">All Ads</a>
+                            <a id="footerCategoriesListAnchor" href="{{route('allAds')}}">All Ads</a>
                             <i id="footerCategoriesListIcon" class="fa-solid fa-circle-arrow-right ms-2 d-none secColor"></i>
                         </li>
                         <li id="footerCategoriesListItem" class="d-flex align-items-center py-1">
