@@ -661,12 +661,6 @@ textarea{
 
 /* Newsletter */
 
-/* Centrare verticalmente, posizionare correttamente la busta, allargare l'input email*/
-
-#newsletterContainerFluid{
-    height: 200px;
-}
-
 #newsletterH5{
     font-weight: 400;
 }
@@ -685,6 +679,7 @@ textarea{
     border-width: 1px;
     border-color: var(--sec-color);
     height: 38px;
+    width: 40%;
 }
 
 :focus-visible {
@@ -710,9 +705,9 @@ textarea{
 #bgEnvelope{
     position: absolute;
     z-index: -1;
-    bottom: 72px;
-    left: 3rem;
-    transform: rotate(45deg) scale(8);
+    bottom: 50px;
+    left: 5rem;
+    transform: rotate(35deg) scale(8);
 }
 
 
@@ -986,6 +981,10 @@ input::-webkit-inner-spin-button {
         transform: scale(1.1) translateX(-2px);
     }
     
+    #bgEnvelope{
+        bottom: 15px;
+    }
+    
 }
 
 @media screen and (min-width: 768px){
@@ -1052,6 +1051,11 @@ input::-webkit-inner-spin-button {
     #sortDisplayDiv, #sortFiltersDiv{
         width: auto;
     }
+    
+    #bgEnvelope{
+        bottom: 40px;
+        left: 6rem;
+    }
 
 }
 
@@ -1102,6 +1106,11 @@ input::-webkit-inner-spin-button {
         width: auto;
     }
     
+    #bgEnvelope{
+        bottom: 50px;
+        left: 10rem;
+    }
+
 }
 
 @media screen and (min-width: 1200px){
@@ -1141,4 +1150,8 @@ input::-webkit-inner-spin-button {
         transform: translateX(-40px)
     }
 
+    #bgEnvelope{
+        bottom: 50px;
+        left: 14rem;
+    }
 }
