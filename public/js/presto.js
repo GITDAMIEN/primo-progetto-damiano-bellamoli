@@ -5,7 +5,7 @@
 // 3- change PostYouAdBanner IntersectionObserver ? + add a nice effect
 // 4- fix rotation to icons in list items (footer)
 // 5- merge the searchbars if possible
-// 6- set the weekly offers countdown to a certain date
+// 6- set the weekly offers countdown to a certain date + make them sinc
 
 //Query selectors
 const arrowNavbar = document.querySelector('#arrowNavbar')
@@ -211,68 +211,94 @@ function displayToastMessage(message){
 }
 
 //setIntervals
+
+//fixed countdown, correctly synced
 let days = 1;
 let hours = 2;
 let minutes = 19;
 let seconds = 19;
 
-let daysInterval = setInterval(function(){
-    
-    if(days>=0){
-        if(days<10){
-            countdownDays.innerHTML='0'+days;
-        }else{
-            countdownDays.innerHTML=days;
-        }
-        days--;
-    }else{
-        countdownDays.innerHTML='00';
-        clearInterval(daysInterval);
-    }
 
-}, 86400000);
+setTimeout(()=>{
 
-let hoursInterval = setInterval(function(){
-    
-    if(hours>=0){
-        if(hours<10){
-            countdownHours.innerHTML='0'+hours;
+    countdownDays.innerHTML=days;
+    days--;
+
+    let daysInterval = setInterval(function(){
+        
+        if(days>=0){
+            if(days<10){
+                countdownDays.innerHTML='0'+days;
+            }else{
+                countdownDays.innerHTML=days;
+            }
+            days--;
         }else{
-            countdownHours.innerHTML=hours;
+            countdownDays.innerHTML='00';
+            clearInterval(daysInterval);
         }
 
-        if(hours>0){
-            hours--;
+    }, 86400000);
+
+}, 4821000);
+
+
+setTimeout(()=>{
+
+    countdownHours.innerHTML=hours;
+    hours--;
+
+    let hoursInterval = setInterval(function(){
+        
+        if(hours>=0){
+            if(hours<10){
+                countdownHours.innerHTML='0'+hours;
+            }else{
+                countdownHours.innerHTML=hours;
+            }
+
+            if(hours>0){
+                hours--;
+            }else if(days>0){
+                hours=23;
+            }
         }else if(days>0){
             hours=23;
-        }
-    }else if(days>0){
-        hours=23;
-    }else
-        clearInterval(hoursInterval);
+        }else
+            clearInterval(hoursInterval);
 
-}, 3600000);
+    }, 3600000);
 
-let minutesInterval = setInterval(function(){
-    
-    if(minutes>=0){
-        if(minutes<10){
-            countdownMinutes.innerHTML='0'+minutes;
-        }else{
-            countdownMinutes.innerHTML=minutes;
-        }
+}, 1221000);
 
-        if(minutes>0){
-            minutes--;
+
+setTimeout(()=>{
+
+    countdownMinutes.innerHTML=minutes;
+    minutes--;
+
+    let minutesInterval = setInterval(function(){
+        
+        if(minutes>=0){
+            if(minutes<10){
+                countdownMinutes.innerHTML='0'+minutes;
+            }else{
+                countdownMinutes.innerHTML=minutes;
+            }
+
+            if(minutes>0){
+                minutes--;
+            }else if(hours>0||days>0){
+                minutes=59;
+            }
         }else if(hours>0||days>0){
             minutes=59;
-        }
-    }else if(hours>0||days>0){
-        minutes=59;
-    }else
-        clearInterval(minutesInterval);
+        }else
+            clearInterval(minutesInterval);
 
-}, 60000);
+    }, 60000);
+
+}, 21000);
 
 let secondsInterval = setInterval(function(){
     
@@ -294,6 +320,16 @@ let secondsInterval = setInterval(function(){
         clearInterval(secondsInterval);
 
 }, 1000);
+
+
+let offerteScadute = setInterval(function(){
+    if(!days&&!hours&&!minutes&&!seconds){
+        setTimeout(()=>{
+            countdownRow.innerHTML='<h3 class="my-4 ubuntuFont customBlack text-center">OFFERTE SCADUTE</h3>';
+            clearInterval(offerteScadute);
+        },1000);
+    }
+},1000);
 
 //Easter Egg
 

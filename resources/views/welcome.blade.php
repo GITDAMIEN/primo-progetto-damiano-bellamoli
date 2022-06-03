@@ -208,9 +208,45 @@
             </div>
         </div>
     </section>
+
+    
+    <!-- Weekly offers countdown -->
+
+    <aside id="weeklyOffersContainerFluid" class="container-fluid py-5 back-main">
+        <div class="container weeklyOffersContainers pt-4 d-flex justify-content-center text-center">
+            <h3 id="weeklyOffersH3" class="mb-0 ubuntuFont customBlack">!! WEEKLY OFFERS COUNTDOWN !!</h3>
+        </div>
+        <div class="container weeklyOffersContainers d-flex justify-content-center">
+            <h4 id="timeLeftH4" class="ubuntuFont customBlack text-center">Time left</h4>
+        </div>
+        <div class="container weeklyOffersContainers d-flex justify-content-center">
+            <div id="countdownRow" class="row justify-content-center">
+                <div class="col-5 col-md-2 text-center countdownElements">
+                    <div id="countdownDays" class="countdownNumbers">02</div>
+                    <div>days</div>
+                </div>
+                <span id="countdownSideDots" class="text-center">:</span>
+                <div class="col-5 col-md-2 text-center countdownElements">
+                    <div id="countdownHours" class="countdownNumbers">03</div>
+                    <div>hours</div>
+                </div>
+                <span id="countdownMiddleDots" class="text-center">:</span>
+                <div class="col-5 col-md-2 text-center countdownElements">
+                    <div id="countdownMinutes" class="countdownNumbers">20</div>
+                    <div>minutes</div>
+                </div>
+                <span id="countdownSideDots" class="text-center">:</span>
+                <div class="col-5 col-md-2 text-center countdownElements">
+                    <div id="countdownSeconds" class="countdownNumbers">20</div>
+                    <div>seconds</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
     
     <!-- New ads -->
-    <section id="newAdsSectionContainerFluid" class="container-fluid back-main text-center py-3">
+    <section id="newAdsSectionContainerFluid" class="container-fluid text-center pb-3 pt-5">
         <div class="container-fluid container-lg">
             <div class="container">
                 <div class="row justify-content-center">
@@ -292,35 +328,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Weekly offers countdown -->
-
-    <!-- To be made responsive -->
-    <aside class="container-fluid my-5">
-        <div class="container d-flex justify-content-center">
-            <div id="countdownRow" class="row justify-content-center">
-                <div class="col-2 text-center countdownElements">
-                    <div id="countdownDays" class="countdownNumbers">02</div>
-                    <div>days</div>
-                </div>
-                <span class="text-center">:</span>
-                <div class="col-2 text-center countdownElements">
-                    <div id="countdownHours" class="countdownNumbers">03</div>
-                    <div>hours</div>
-                </div>
-                <span class="text-center">:</span>
-                <div class="col-2 text-center countdownElements">
-                    <div id="countdownMinutes" class="countdownNumbers">20</div>
-                    <div>minutes</div>
-                </div>
-                <span class="text-center">:</span>
-                <div class="col-2 text-center countdownElements">
-                    <div id="countdownSeconds" class="countdownNumbers">20</div>
-                    <div>seconds</div>
-                </div>
-            </div>
-        </div>
-    </aside>
 
     <!-- Newsletter -->
     <section class="container-fluid">

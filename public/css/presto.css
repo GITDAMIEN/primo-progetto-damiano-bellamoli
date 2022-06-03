@@ -375,7 +375,110 @@ a.nav-link:hover{
 }
 
 
+/* Weekly offers countdown*/
+
+#countdownRow{
+    width: 70%;
+    background-color: var(--sec-color);
+    border-radius: 60px;
+    padding: 20px;
+    border-style: double var(--sec-color);
+    box-shadow: 0 0 0 3px white, 0 0 0 6px var(--sec-color);
+}
+
+@keyframes flashingMiddleDots{
+    0% {
+        color: var(--sec-color);
+    }
+
+    49% {
+        color: var(--sec-color);
+    }
+    
+    51% {
+        color: var(--sec-color);
+    }
+
+    100% {
+        color: var(--sec-color);
+    }
+}
+
+@keyframes flashingSideDots{
+    0% {
+        color: var(--custom-black);
+    }
+
+    49% {
+        color: var(--custom-black);
+    }
+    
+    51% {
+        color: var(--sec-color);
+    }
+
+    100% {
+        color: var(--sec-color);
+    }
+}
+
+#countdownMiddleDots{
+    width: 0px;
+    padding: 8px 0px;
+    font-weight: 600;
+    font-size: 28px;
+    animation-name: flashingMiddleDots;
+    animation-duration: 1s;
+    animation-iteration-count: infinite; 
+}
+
+#countdownSideDots{
+    width: 5px;
+    padding: 8px 0px;
+    font-weight: 600;
+    font-size: 28px;
+    animation-name: flashingSideDots;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;    
+}
+
+.countdownElements{
+    font-weight: 600;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--custom-black);
+}
+
+.countdownNumbers{
+    font-size: 40px;
+}
+
+#weeklyOffersH3{
+    /* box-shadow: 0 0 0 3px white, 0 0 0 6px var(--sec-color); */
+    border-style: solid none none none;
+    border-color: var(--sec-color);
+    border-radius: 30px;
+    padding: 8px 16px;
+}
+
+#timeLeftH4{
+    transform: translateY(25px);
+    width: 20%;
+    min-width: 140px;
+    background-color: var(--sec-color);
+    border-radius: 30px;
+    padding: 8px;
+    border-color: var(--custom-black);
+    box-shadow: 0 0 0 1px var(--custom-black);
+}
+
+
 /* New ads */
+
+#newAdsSectionContainerFluid{
+    background-image: url(/media/Animated\ Shape\ \(8\).svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 .productCard{
     border-radius: 15px;
@@ -609,6 +712,7 @@ textarea{
 }
 
 #contactUsH5{
+    font-size: 16px;
     margin: 30px auto;
 }
 
@@ -656,51 +760,6 @@ textarea{
     text-shadow: 0px 0px 5px var(--custom-black);
 }
 
-
-/* Weekly offers countdown*/
-
-#countdownRow{
-    width: 70%;
-    background-color: var(--sec-color);
-    border-radius: 60px;
-    padding: 20px;
-    border-style: double var(--sec-color);
-    box-shadow: 0 0 0 3px white, 0 0 0 6px var(--sec-color);
-}
-
-@keyframes flashingDots{
-    0% {
-        color: var(--custom-black);
-    }
-
-    70% {
-        color: var(--custom-black);
-    }
-
-    100% {
-        color: var(--sec-color);
-    }
-}
-
-#countdownRow > span{
-    width: 5px;
-    padding: 8px 0px;
-    font-weight: 600;
-    font-size: 28px;
-    animation-name: flashingDots;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-}
-
-.countdownElements{
-    font-weight: 600;
-    font-family: 'Ubuntu', sans-serif;
-    color: var(--custom-black);
-}
-
-.countdownNumbers{
-    font-size: 40px;
-}
 
 
 /* Newsletter */
@@ -975,6 +1034,13 @@ input::-webkit-inner-spin-button {
 
 /* Media query */
 
+@media screen and (min-width: 393px){
+
+    #contactUsH5{
+        font-size: 20px;
+    }
+}
+
 @media screen and (min-width: 480px){
     
     .cartAndWishlistP{
@@ -1061,6 +1127,28 @@ input::-webkit-inner-spin-button {
     
     #contactUsLeftPart{
         text-align: end;
+    }
+
+    #countdownMiddleDots{
+        width: 5px; 
+    }
+
+    @keyframes flashingMiddleDots{
+        0% {
+            color: var(--custom-black);
+        }
+
+        49% {
+            color: var(--custom-black);
+        }
+        
+        51% {
+            color: var(--sec-color);
+        }
+
+        100% {
+            color: var(--sec-color);
+        }
     }
 
     #footerAppsLinksItem{
