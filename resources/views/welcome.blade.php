@@ -1,9 +1,6 @@
 <x-layout>
     
-    <x-slot name="title">Homepage</x-slot>
-    <!-- Sito template -->
-    <!-- https://technext.github.io/electro/ -->
-    
+    <x-slot name="title">Homepage</x-slot>    
     
     <!-- Post your ad -->
     <div id="postYourAdBanner" class="d-none align-items-center">
@@ -142,28 +139,6 @@
                         <h2 class="customBlack ubuntuFont fw-bold"><span id="newAdsText">NEW ADS</span></h2>
                     </div>
                 </div>
-                <!-- <div class="row mt-3 justify-content-center">
-                    <div class="col-3 card d-flex align-items-center productCard m-3" style="width: 18rem;">
-                        <img class="card-img-top" src="https://technext.github.io/electro/img/shop01.png" alt="Immagine smartphone">
-                        <div class="card-body py-1">
-                            <p class="card-title productCategory text-center mt-3">CATEGORY</p>
-                            <a href="#"><p class="card-text productName text-center">PRODUCT NAME</p></a>
-                            <p class="text-center secColor fw-bold fs-5 mt-2 mb-0">150 $</p>
-                        </div>
-                        <div class="row mb-2 py-2 w-100 justify-content-around">
-                            <div class="col-3 p-0 d-flex justify-content-center align-items-center">
-                                <button id="heartBtn" class="productBtns">
-                                    <i class="fa-regular fa-heart"></i>
-                                </button>
-                            </div>
-                            <div class="col-3 p-0 d-flex justify-content-center align-items-center">
-                                <button id="cartBtn" class="productBtns">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
                 <div id="swiperRow" class="row mb-3 w-100">
                     <div class="col-12 p-0">
                         <div class="swiper px-3 pb-3">

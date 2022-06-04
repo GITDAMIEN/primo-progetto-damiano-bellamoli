@@ -20,11 +20,7 @@
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="form-floating my-2 mx-auto">
                         <select class="form-select" id="searchByCategoryInput" aria-label="Floating label select example">
-                          <option selected>All categories</option>
-                          <option value="1">Laptops</option>
-                          <option value="2">Smartphones</option>
-                          <option value="3">Cameras</option>
-                          <option value="3">Accessories</option>
+                          <option selected value="all">All categories</option>
                         </select>
                     </div>
                 </div>

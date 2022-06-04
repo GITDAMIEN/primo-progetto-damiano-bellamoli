@@ -1,5 +1,4 @@
-<section class="container-fluid">
-        <hr id="newsletterHr" class="w-100 secColor my-0">
+<section id="newsletterContainerFluid" class="container-fluid">
         <div class="container">
             <div class="row py-5">
                 <div id="newsletterDiv" class="col-12 text-center my-4">

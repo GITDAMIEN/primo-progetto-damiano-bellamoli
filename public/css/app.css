@@ -11386,7 +11386,7 @@ li a.active:after {
     left: 0;
     right: 0;
     background-color: var(--sec-color);
-    bottom: 3px; /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
+    bottom: 3px;
 }
 
 a.nav-link{
@@ -11587,6 +11587,7 @@ a.nav-link:hover{
 .categoriesCards:hover {
     transform: scale(1.15);
 }
+
 .categoriesCards .fa-circle-arrow-right{
     transition: 0.3s;
 }
@@ -11782,7 +11783,6 @@ a.nav-link:hover{
 }
 
 #weeklyOffersH3{
-    /* box-shadow: 0 0 0 3px white, 0 0 0 6px var(--sec-color); */
     border-style: solid none none none;
     border-color: var(--sec-color);
     border-radius: 30px;
@@ -11970,6 +11970,7 @@ textarea{
     background-image: url(/media/Animated\ Shape\ \(7\).svg);
     background-repeat: no-repeat;
     background-size: cover;
+    border-top: 2px solid var(--sec-color);
 }
 
 #contactUsRow{
@@ -12047,6 +12048,11 @@ textarea{
 
 .form-control, .form-select{
     border-radius: 10px;
+    font-size: 0.95rem!important;
+}
+
+.form-floating > label{
+    font-size: 0.95rem!important;
 }
 
 .form-control:focus, .form-select:focus{
@@ -12097,8 +12103,8 @@ textarea{
     font-weight: 400;
 }
 
-#newsletterHr{
-    opacity: 0.8;
+#newsletterContainerFluid{
+    border-top: 2px solid var(--sec-color);
 }
 
 #newsletterSpan{
@@ -12249,7 +12255,7 @@ ul{
 }
 
 
-/**//**//**//**//* ADS.HTML *//**//**//**//**/
+/**//**//**//**//* ALL ADS PAGE *//**//**//**//**/
 
 
 /* Search filters */

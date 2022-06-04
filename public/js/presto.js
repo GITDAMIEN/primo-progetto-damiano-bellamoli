@@ -5,7 +5,6 @@
 // 3- change PostYouAdBanner IntersectionObserver ? + add a nice effect
 // 4- fix rotation to icons in list items (footer)
 // 5- merge the searchbars if possible
-// 6- set the weekly offers countdown to a certain date + make them sinc
 
 //Query selectors
 const arrowNavbar = document.querySelector('#arrowNavbar')
@@ -20,6 +19,7 @@ const easterEggToastMessage = document.querySelector('#easterEggToastMessage')
 const newAdsWrapper = document.querySelector('#newAdsWrapper')
 const newAdsRow = document.querySelector('#newAdsRow')
 const postYourAdBanner = document.querySelector('#postYourAdBanner')
+const closePostYourAdBannerBtn = document.querySelector('#closePostYourAdBannerBtn')
 const countdownDays = document.querySelector('#countdownDays')
 const countdownHours = document.querySelector('#countdownHours')
 const countdownMinutes = document.querySelector('#countdownMinutes')
@@ -28,7 +28,6 @@ const footerCategoriesListItems = document.querySelectorAll('#footerCategoriesLi
 const footerCategoriesListIcons = document.querySelectorAll('#footerCategoriesListIcon')
 const footerInfoListItems = document.querySelectorAll('#footerInfoListItem')
 const footerInfoListIcons = document.querySelectorAll('#footerInfoListIcon')
-const closePostYourAdBannerBtn = document.querySelector('#closePostYourAdBannerBtn')
 
 // Variables
 var easterEggCounter = 0;
@@ -116,15 +115,12 @@ const swiper = new Swiper('.swiper', {
     breakpoints: {
         700: {
             slidesPerView: 2,
-            // spaceBetween: 20,
         },
         900: {
             slidesPerView: 3,
-            // spaceBetween: 30,
         },
         1200: {
             slidesPerView: 4,
-            // spaceBetween: 50,
         },
     }
     
@@ -212,7 +208,6 @@ function displayToastMessage(message){
 
 //setIntervals
 
-//fixed countdown, correctly synced
 let days = 1;
 let hours = 2;
 let minutes = 19;
@@ -347,14 +342,11 @@ categoriesText.addEventListener('click', ()=>{
 });
 
 //Bootstrap validation
-// Example starter JavaScript for disabling form submissions if there are invalid fields
 (() => {
     'use strict'
   
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
     const forms = document.querySelectorAll('.needs-validation')
   
-    // Loop over them and prevent submission
     Array.from(forms).forEach(form => {
       form.addEventListener('submit', event => {
         if (!form.checkValidity()) {
