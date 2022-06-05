@@ -12360,7 +12360,13 @@ input::-webkit-inner-spin-button {
     padding-left: 0px;
 }
 
-.selectedFilter{
+#ulSortFilters button{
+    border-style: none!important;
+    background-color: transparent!important;
+    padding: 0px;
+}
+
+.selectedFilter > button{
     font-weight: 600;
     color: var(--custom-black);
     text-shadow: 1px 1px 2px var(--sec-color);

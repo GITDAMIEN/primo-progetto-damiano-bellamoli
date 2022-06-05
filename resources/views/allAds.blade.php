@@ -55,9 +55,9 @@
                 <div id="sortFiltersDiv" class="col-6 col-lg-3 d-flex align-items-center">
                     <ul id="ulSortFilters" class="d-flex">
                         <li class="px-1">Filter:</li>
-                        <li class="px-1 selectedFilter">All</li>
-                        <li class="px-1">Searching</li>
-                        <li class="px-1">Selling</li>
+                        <li adType="all" class="filterBtns px-1 selectedFilter"><button>All</button></li>
+                        <li adType="search" class="filterBtns px-1"><button>Searching</button></li>
+                        <li adType="sell" class="filterBtns px-1"><button>Selling</button></li>
                     </ul>
                 </div>
                 <div id="sortByOrderDiv" class="col-12 col-lg-5 d-flex align-items-center px-2 pt-lg-0">

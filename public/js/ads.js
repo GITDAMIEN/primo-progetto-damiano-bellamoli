@@ -15,7 +15,9 @@ const maxInput = document.querySelector('#maxInput');
 const searchFilterBtn = document.querySelector('#searchFilterBtn');
 const sortSelect = document.querySelector('#sortSelect')
 const sortIconDiv = document.querySelector('#sortIconDiv')
-const productCards = document.querySelectorAll('.productCards');
+let productCards = document.querySelectorAll('.productCards');
+const filterBtns = document.querySelectorAll('.filterBtns');
+let productTypeSelected = 'all';
 const footerCategoriesListItems = document.querySelectorAll('#footerCategoriesListItem')
 const footerCategoriesListIcons = document.querySelectorAll('#footerCategoriesListIcon')
 const footerInfoListItems = document.querySelectorAll('#footerInfoListItem')
@@ -103,7 +105,15 @@ fetch('./annunci.json')
         })
 
         // new Set with not-repeated categories
-        let singleCategories = new Set(categories);
+        let singleCategories = new Set(categories.sort((a,b)=>{
+            if(a.toLowerCase() < b.toLowerCase())
+                return -1
+            if(a.toLowerCase() < b.toLowerCase())
+                return 1
+            
+            //if same name
+            return 0;
+        }))
 
         // creates an option for each category
         singleCategories.forEach(category =>{
@@ -122,7 +132,11 @@ fetch('./annunci.json')
         let selectedMinPrice = Number(minInput.value);
         let selectedMaxPrice = Number(maxInput.value)== 0 ? Infinity : Number(maxInput.value);
 
-        let filteredByCategory = ads.filter(product=>{
+        let filteredByType = ads.filter(product=>{
+            return product.type.toLowerCase() == productTypeSelected.toLocaleLowerCase() || productTypeSelected == 'all';
+        })
+
+        let filteredByCategory = filteredByType.filter(product=>{
             return product.category==selectedCategory || selectedCategory == 'all';
         })
 
@@ -137,8 +151,10 @@ fetch('./annunci.json')
         showHideFilteredAds(filteredByPriceIds);
     }
 
-    //show/hides ads based on filters
+    //shows/hides ads based on filters
     function showHideFilteredAds(filteredAdsIds){
+
+        productCards = document.querySelectorAll('.productCards');
 
         productCards.forEach(prod=>{
 
@@ -224,6 +240,22 @@ fetch('./annunci.json')
 
     // sort event
     sortSelect.addEventListener('input', sortProducts)
+
+    //filter by all, searching or selling
+    filterBtns.forEach(btn=>{
+
+        btn.addEventListener('click', ()=>{
+            btn.classList.add('selectedFilter')
+            filterBtns.forEach(el=>{
+                if(el!=btn)
+                    el.classList.remove('selectedFilter')
+            })
+
+            productTypeSelected = btn.getAttribute('adType')
+
+            filterProducts();
+        })
+    })
 
     //functions launches
     createProducts();
