@@ -62,12 +62,16 @@
                 </div>
                 <div id="sortByOrderDiv" class="col-12 col-lg-5 d-flex align-items-center px-2 pt-lg-0">
                     <p class="my-auto">Sort:</p>
-                    <i class="mt-1 fa-solid fa-arrow-down-short-wide mx-2"></i>
+                    <div id="sortIconDiv">
+                        <i class="mt-1 fa-solid fa-arrow-down-short-wide mx-2"></i>
+                    </div>
                     <select id="sortSelect" class="form-select" aria-label="Default select example">
-                        <option class="sortOptions" selected>New to old</option>
-                        <option class="sortOptions" value="3">Old to new</option>
-                        <option class="sortOptions" value="1">A-Z</option>
-                        <option class="sortOptions" value="2">Z-A</option>
+                        <option class="sortOptions" value="newToOld" selected>New to old</option>
+                        <option class="sortOptions" value="oldToNew">Old to new</option>
+                        <option class="sortOptions" value="aToZ">Name A-Z</option>
+                        <option class="sortOptions" value="zToA">Name Z-A</option>
+                        <option class="sortOptions" value="fromCheaper">Price low to high</option>
+                        <option class="sortOptions" value="toCheaper">Price high to low</option>
                     </select>
                 </div>
             </div>

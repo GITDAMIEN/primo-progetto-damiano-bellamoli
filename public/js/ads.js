@@ -13,6 +13,9 @@ const searchByCategoryInput = document.querySelector('#searchByCategoryInput');
 const minInput = document.querySelector('#minInput');
 const maxInput = document.querySelector('#maxInput');
 const searchFilterBtn = document.querySelector('#searchFilterBtn');
+const sortSelect = document.querySelector('#sortSelect')
+const sortIconDiv = document.querySelector('#sortIconDiv')
+const productCards = document.querySelectorAll('.productCards');
 const footerCategoriesListItems = document.querySelectorAll('#footerCategoriesListItem')
 const footerCategoriesListIcons = document.querySelectorAll('#footerCategoriesListIcon')
 const footerInfoListItems = document.querySelectorAll('#footerInfoListItem')
@@ -112,6 +115,7 @@ fetch('./annunci.json')
         })
     }
 
+    //filters ads
     function filterProducts(){
         let selectedCategory = searchByCategoryInput.value;
         let selectedText = searchByTextInput.value;
@@ -133,9 +137,8 @@ fetch('./annunci.json')
         showHideFilteredAds(filteredByPriceIds);
     }
 
+    //show/hides ads based on filters
     function showHideFilteredAds(filteredAdsIds){
-
-        let productCards = document.querySelectorAll('.productCards');
 
         productCards.forEach(prod=>{
 
@@ -150,9 +153,79 @@ fetch('./annunci.json')
         })
     }
 
+    function sortProducts(){
+
+        //order the array with a switch case
+        switch(sortSelect.value){
+            case 'newToOld' :       ads.sort((a,b)=> Number(b.id)-Number(a.id));
+                                    sortIconDiv.innerHTML = `
+                                    <i class="mt-1 fa-solid fa-arrow-down-short-wide mx-2"></i>
+                                    `
+                                    break;
+            case 'oldToNew' :       ads.sort((a,b)=> Number(a.id)-Number(b.id));
+                                    sortIconDiv.innerHTML = `
+                                    <i class="mt-1 fa-solid fa-arrow-down-wide-short mx-2"></i>
+                                    `
+                                    break;
+            case 'aToZ' :           ads.sort((a,b)=>{
+                                        if(a.name.toLowerCase() < b.name.toLowerCase())
+                                            return -1
+                                        if(a.name.toLowerCase() < b.name.toLowerCase())
+                                            return 1
+                                        
+                                        //if same name
+                                        return 0;
+                                    });
+                                    sortIconDiv.innerHTML = `
+                                    <i class="mt-1 fa-solid fa-arrow-down-a-z mx-2"></i>
+                                    `
+                                    break;
+            case 'zToA' :           ads.sort((b,a)=>{
+                                        if(a.name.toLowerCase() < b.name.toLowerCase())
+                                            return -1
+                                        if(a.name.toLowerCase() < b.name.toLowerCase())
+                                            return 1
+                                        
+                                        //if same name
+                                        return 0;
+                                    });
+                                    sortIconDiv.innerHTML = `
+                                    <i class="mt-1 fa-solid fa-arrow-down-z-a mx-2"></i>
+                                    `
+                                    break;
+            case 'fromCheaper' :    ads.sort((a,b)=> Number(a.price)-Number(b.price));
+                                    sortIconDiv.innerHTML = `
+                                    <i class="mt-1 fa-solid fa-arrow-down-1-9 mx-2"></i>
+                                    `
+                                    break;
+            case 'toCheaper' :      ads.sort((a,b)=> Number(b.price)-Number(a.price));
+                                    sortIconDiv.innerHTML = `
+                                    <i class="mt-1 fa-solid fa-arrow-down-9-1 mx-2"></i>
+                                    `
+                                    break;
+            default :
+                                    break;
+        }
+
+        orderCards();
+    }
+
+    function orderCards(){
+    
+        ads.forEach((ad,i)=>{
+            let productCard = document.querySelector(`[product-id="${ad.id}"]`)
+
+            productCard.style.order = i;
+        })
+    }
+
     // search button click event
     searchFilterBtn.addEventListener('click', filterProducts);
 
+    // sort event
+    sortSelect.addEventListener('input', sortProducts)
+
+    //functions launches
     createProducts();
     createCategoriesFilter();
 
