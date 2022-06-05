@@ -13,8 +13,8 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-12 col-sm-6 col-md-3">
                     <div class="form-floating my-2 mx-auto">
-                        <input type="text" class="form-control" id="searchByNameInput" placeholder="Search by name">
-                        <label for="searchByNameInput" class="">Search by name</label>
+                        <input type="text" class="form-control" id="searchByTextInput" placeholder="Search by name">
+                        <label for="searchByTextInput" class="">Search by name</label>
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-md-3">

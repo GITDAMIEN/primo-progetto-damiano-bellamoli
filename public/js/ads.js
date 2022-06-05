@@ -8,7 +8,10 @@ const searchBar2 = document.querySelector('#searchBar2')
 const heartBtn = document.querySelectorAll('#heartBtn')
 const cartBtn = document.querySelectorAll('#cartBtn')
 const adsWrapper = document.querySelector('#adsWrapper');
+const searchByTextInput = document.querySelector('#searchByTextInput');
 const searchByCategoryInput = document.querySelector('#searchByCategoryInput');
+const minInput = document.querySelector('#minInput');
+const maxInput = document.querySelector('#maxInput');
 const searchFilterBtn = document.querySelector('#searchFilterBtn');
 const footerCategoriesListItems = document.querySelectorAll('#footerCategoriesListItem')
 const footerCategoriesListIcons = document.querySelectorAll('#footerCategoriesListIcon')
@@ -24,6 +27,8 @@ fetch('./annunci.json')
     // creates all the products cards
     function createProducts(){
 
+        ads.sort((a,b)=> b.id - a.id);
+
         ads.forEach((ad,i)=>{
 
             let adElement = document.createElement('div')
@@ -31,7 +36,7 @@ fetch('./annunci.json')
 
             adElement.setAttribute('product-id', ad.id);
 
-            if(i>=(ads.length-10)){
+            if(i<10){
                 adElement.innerHTML=`
                     <div class="card d-flex align-items-center productCard" style="width: 18rem;">
                         <span class="badge typeBadge ${ad.type == 'sell' ? 'back-colorRed' : 'back-colorGreen'}">${ad.type == 'sell' ? 'Selling' : 'Searching'}</span>
@@ -109,12 +114,23 @@ fetch('./annunci.json')
 
     function filterProducts(){
         let selectedCategory = searchByCategoryInput.value;
+        let selectedText = searchByTextInput.value;
+        let selectedMinPrice = Number(minInput.value);
+        let selectedMaxPrice = Number(maxInput.value)== 0 ? Infinity : Number(maxInput.value);
 
-        let filteredByCategoryIds = ads.filter(product=>{
+        let filteredByCategory = ads.filter(product=>{
             return product.category==selectedCategory || selectedCategory == 'all';
+        })
+
+        let filteredByText = filteredByCategory.filter(product=>{
+            return product.name.toLowerCase().includes(selectedText.toLowerCase());
+        })
+        
+        let filteredByPriceIds = filteredByText.filter(product=>{
+            return Number(product.price) >= selectedMinPrice && Number(product.price) <= selectedMaxPrice;
         }).map(el=> {return el.id})
 
-        showHideFilteredAds(filteredByCategoryIds);
+        showHideFilteredAds(filteredByPriceIds);
     }
 
     function showHideFilteredAds(filteredAdsIds){
